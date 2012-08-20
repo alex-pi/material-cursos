@@ -33,15 +33,15 @@ public class UsoRequestParam {
 	}	
 	
 	@RequestMapping(value="/registrar", method=RequestMethod.POST)
-	public ModelAndView registrar(@RequestParam("nombreCompleto") String nombre,
+	public String registrar(@RequestParam("nombreCompleto") String nombre,
 									@RequestParam String email,
 									@RequestParam(required=false) Integer edad){
 		ClienteVO c = new ClienteVO(nombre, email, edad);
 		ServiciosClienteImpl.registrar(c);
 		
-		List<ClienteVO> clientes = ServiciosClienteImpl.listar();		
-		return new ModelAndView("params/listado", "listaClientes", clientes);
-//		return "redirect:listar";
+//		List<ClienteVO> clientes = ServiciosClienteImpl.listar();		
+//		return new ModelAndView("params/listado", "listaClientes", clientes);
+		return "redirect:listar";
 	}	
 	
 	@RequestMapping("/listar")

@@ -20,7 +20,9 @@ Recuerda que el mapeo de tu controlador debe atender al index solicitado en el a
 <h2>Ejercicios</h2>
 <h4>Coloca aqui links a tus ejercicios como lo vayas necesitando.</h4>
 <ul>
-	<li><a href="#">Ejercicio2</a></li>	
+	<li><a href="/ejercicios-mvc/mvc/ej2">Ejercicio2</a></li>	
+	<li><a href="/ejercicios-mvc/mvc/ej3">Ejercicio3</a></li>
+	<li><a href="/ejercicios-mvc/mvc/ej5">Ejercicio5</a></li>
 </ul>
 </body>
 </html>

@@ -15,7 +15,7 @@ public class UsoRequestMapping {
 		return "usorm/usorm";
 	}
 
-	@RequestMapping(value="/registro/*", method=RequestMethod.GET)
+	@RequestMapping(value="/registro/cliente", method=RequestMethod.GET)
 	public String registro(HttpServletRequest request){
 		String qs = request.getRequestURL().toString();
 		

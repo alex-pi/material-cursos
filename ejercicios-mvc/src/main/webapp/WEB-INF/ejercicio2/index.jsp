@@ -24,8 +24,8 @@ un método en el controlador.
 </pre>
 <h2>Opciones</h2>
 <ul>
-	<li><a href="#">Registrar</a></li>
-	<li><a href="#">Listar</a></li>
+	<li><a href="/ejercicios-mvc/mvc/ej2/registro">Registrar</a></li>
+	<li><a href="/ejercicios-mvc/mvc/ej2/listado">Listar</a></li>
 	<li><a href="#">Buscar</a></li>		
 </ul>
 </body>
