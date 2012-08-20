@@ -64,7 +64,7 @@
 		</div>
 		<h4>Mostrando ejemplo/ejercicio: </h4>
         <div id="divEjemplos">
-
+			
         </div>
     </body>
 </html>
