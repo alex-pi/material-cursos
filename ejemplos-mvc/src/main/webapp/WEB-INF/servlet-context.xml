@@ -34,6 +34,8 @@
 	        </util:list>
 	    </property>
 	    <property name="order" value="0" />
-	</bean>	
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver" />
 		
 </beans>

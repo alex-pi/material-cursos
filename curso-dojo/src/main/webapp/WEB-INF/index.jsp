@@ -62,6 +62,13 @@
 			<a id="dijitSelectConStore" class="opMenu" href="#">Dijit Select con Store</a><br/>
 			<a id="dijitTextBoxes" class="opMenu" href="#">Dijit text boxes</a><br/>
 		</div>
+		
+		<h4>Menu de ejercicios:</h4>
+		<div id="menuEjercicios">
+			<a id="primerEjercicio" class="opMenu" href="#">Primer ejercicio</a><br/>
+			<a id="ejercicio2" class="opMenu" href="#">Ejercicio2</a><br/>
+			<a id="ejercicio3" class="opMenu" href="#">Ejercicio3</a><br/>
+		</div>	
 		<h4>Mostrando ejemplo/ejercicio: </h4>
         <div id="divEjemplos">
 			

@@ -1,6 +1,7 @@
 package com.mx.smartsol.mvc.controller;
 
 import java.util.Date;
+import java.util.Locale;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,7 +28,7 @@ public class UsoModelAttribute {
 	}
 
 	@RequestMapping(value="/vista/implicita", method=RequestMethod.GET)
-	public ModelMap resolverVistaImplicita(){
+	public ModelMap resolverVistaImplicita(Locale locale){
 		ModelMap m = new ModelMap("fecha", new Date()); 
 		
 		return m;

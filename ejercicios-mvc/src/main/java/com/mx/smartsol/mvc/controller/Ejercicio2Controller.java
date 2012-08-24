@@ -2,6 +2,7 @@ package com.mx.smartsol.mvc.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,12 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mx.smartsol.mvc.servicios.ServiciosLibro;
 import com.mx.smartsol.mvc.util.ServiciosLibroImpl;
 import com.mx.smartsol.mvc.vo.LibroVO;
 
 @Controller
 @RequestMapping(value="/ej2")
 public class Ejercicio2Controller {
+	
+	@Autowired
+	private ServiciosLibro serviciosLibro;
 
 	@RequestMapping(method=RequestMethod.GET)
 	public String getVista(){
@@ -39,14 +44,14 @@ public class Ejercicio2Controller {
 	
 	@RequestMapping(value ="/registrar", method=RequestMethod.POST)
 	public String registrar(@ModelAttribute LibroVO libro){
-		ServiciosLibroImpl.registrar(libro);
+		serviciosLibro.registrar(libro);
 		
 		return "ejercicio2/index";
 	}
 	
 	@RequestMapping(value ="/listado", method=RequestMethod.GET)
 	public ModelAndView getListado(){
-		List<LibroVO> libros = ServiciosLibroImpl.listar();
+		List<LibroVO> libros = serviciosLibro.listar();
 		
 		return new ModelAndView
 				("ejercicio2/listado", "listaLibros", libros);
@@ -54,14 +59,14 @@ public class Ejercicio2Controller {
 	
 	@RequestMapping("/libro/{idLibro}")
 	public ModelAndView buscar(@PathVariable Long idLibro){
-		LibroVO libro = ServiciosLibroImpl.buscar(idLibro);
+		LibroVO libro = serviciosLibro.buscar(idLibro);
 		
 		return new ModelAndView("ejercicio2/detalle", "libro", libro);
 	}
 		
 	@RequestMapping("/libro/eliminar/{idLibro}")
 	public String eliminar(@PathVariable Long idLibro){
-		ServiciosLibroImpl.eliminar(idLibro);
+		serviciosLibro.eliminar(idLibro);
 		
 		return "redirect:/mvc/ej2/listado";
 	}	

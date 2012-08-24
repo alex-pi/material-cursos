@@ -1,22 +1,30 @@
-define(["dojo/_base/array", "dojo/_base/lang", "dojo/dom-construct", "dojo/_base/json"], 
-		function(array, lang, domConstruct, json){
+define(["dojo/_base/array", "dojo/_base/lang", "dojo/dom-construct", 
+        "dojo/_base/json", "dojo/on", "dojo/mouse", "dojo/dom",
+        "dojo/dom-class"], 
+		function(array, lang, domConstruct, json, 
+				on, mouse, dom, domClass){
 	
 	var divContenido;
 	var correos;
+	var clientesPorId;
+	var nombre;
 	var clienteDefault = {
+			id: 1,
 			nombre: "Carlos Urbina",
 			email: "curbina@gmail.com"
 		};
 	var clientes = [clienteDefault,{
+		id: 2,
 		nombre: "Edgar Arenas",
 		email: "earenas@gmail.com"
 	},{
+		id: 3,
 		nombre: "Usain Bolt",
 		email: "ubolt@gmail.com"
 	}];
 	
 	function ejemploForEach(){		
-		domConstruct.place("<p>---Nombres de clientes: </p>", divContenido);
+		domConstruct.place("<p>---Nombres de clientes: </p>", divContenido, "last");
 		var listaClientes = "<ul>";
 		array.forEach(clientes, function(c){
 			listaClientes += "<li>"+c.nombre+"</li>";
@@ -30,6 +38,10 @@ define(["dojo/_base/array", "dojo/_base/lang", "dojo/dom-construct", "dojo/_base
 		correos = array.map(clientes, function(c){
 			return c.email;
 		});
+		
+//		clientesPorId = array.map(clientes, function(c){
+//			return 
+//		});
 		domConstruct.place("<span>"+json.toJson(correos)+"</span>", divContenido);
 	}
 	
@@ -56,8 +68,19 @@ define(["dojo/_base/array", "dojo/_base/lang", "dojo/dom-construct", "dojo/_base
 		domConstruct.place("<span>"+json.toJson(clientes)+"</span>", divContenido);
 	}
 	
+	function unCuadro(){
+		domConstruct.place('<div id="unCuadro" class="" style="width: 50px; height: 50px; background-color: red;">Hola</div>'
+				, divContenido);
+		var nodoCuadro = dom.byId("unCuadro");
+		  on(nodoCuadro, mouse.enter, function(event){
+			   domClass.add(nodoCuadro, "hoverCuadro");
+			   console.log('----');
+		  });		
+	}
+	
 	function init(divEjemplos){
 		divContenido = divEjemplos;
+		unCuadro();
 		ejemploForEach();
 		ejemploMap();
 		ejemploIndexOf();

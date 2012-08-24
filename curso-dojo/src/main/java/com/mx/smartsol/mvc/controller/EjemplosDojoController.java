@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mx.smartsol.mvc.util.ServiciosClienteImpl;
+import com.mx.smartsol.mvc.util.ServiciosLibroImpl;
 import com.mx.smartsol.mvc.vo.ClienteVO;
+import com.mx.smartsol.mvc.vo.LibroVO;
 
 @Controller
 @RequestMapping("/clientes")
@@ -29,4 +31,10 @@ public class EjemplosDojoController {
 	public List<ClienteVO> listarClientes(){
 		return ServiciosClienteImpl.listar();
 	}
+	
+	@RequestMapping(value="/libros", method=RequestMethod.GET)
+	@ResponseBody
+	public List<LibroVO> listarLibros(){
+		return ServiciosLibroImpl.listar();
+	}	
 }
