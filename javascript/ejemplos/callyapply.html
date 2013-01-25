@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Uso de apply y call.</title>
+  <link rel="stylesheet" href="../utils/test.css" />
+  <script src="../utils/test.js"></script>
+  <script src="../utils/log.js"></script>
+</head>
+<body>
+<ul id="results"></ul>
+<script type="text/javascript">
+    window.onload = function(){
+        function sum() {
+            assert(this !== window, "this no es window esta vez.")
+            this.sum = 0;
+            for(var i = 0; i < arguments.length; i++){
+                this.sum += arguments[i];
+            }
+        }
+        
+        function prod() {
+            this.prod = 1;
+            for(var i = 0; i < arguments.length; i++){
+                this.prod *= arguments[i];
+            }
+        }
+        
+        operaciones = {};
+        
+        test("Probando sum y prod", function(){
+            sum.call(operaciones, 1,2,3,4,5);
+            assert(operaciones.sum == 15, "1+...+5 = 15");
+            
+            prod.apply(operaciones, [1,2,3,4]);
+            assert(operaciones.prod == 24, "4! = 24");
+        });
+    }
+</script>
+</body>
+</html>

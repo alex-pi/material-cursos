@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Declaracion de funciones</title>
+  <link rel="stylesheet" href="../utils/test.css" />
+  <script src="../utils/test.js"></script>
+  <script src="../utils/log.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    log("Iniciando tests de declaración de funciones.");
+    function nombreFunc(){ return true;}
+    
+    var anonimaUno = function(){ return true;}
+    
+    window.anonimaDos = function(){ return true;}
+    
+window.onload = function(){
+
+    test("Testing declaracion de funciones: ", function() {
+        // Realice las siguientes verificaciones usando la utilería assert.
+        
+        // Verifique si nombreFunc es visible y el valor de su propiedad name.
+        assert(typeof nombreFunc == 'function', "nombreFunc está disponible.");
+        assert(nombreFunc.name == 'nombreFunc', "el nombre de nombreFunc es nombreFunc, doh!");
+        
+        // Realice lo mismo para: anonimaUno, window.anonimaDos y outer.
+        assert(typeof anonimaUno == 'function', "nombreFunc está disponible.");
+        assert(anonimaUno.name == '', "anonimaUno hace referencia a una función anónima.");
+        
+        assert(typeof window.anonimaDos == 'function', "window.anonimaDos está disponible.");
+        assert(window.anonimaDos.name == '', "window.anonimaDos hace referencia a una función anónima.");
+        
+        function outer(){                                              
+            // En este punto verifique si las funciones: anonima e inner son visibles.
+            assert(typeof anonima == 'undefined', "anonima aún no existe en este punto.");
+            assert(typeof inner == 'function', "En cambio inner sí está disponible.");
+            
+            var anonima = function(){}
+            function inner(){}
+                        
+        } 
+         
+        outer();                                                       
+        
+        // Verifique los valores de window.nombreFunc y window.anonimaUno.
+        assert(typeof window.anonimaUno == 'function', "window.anonimaUno está disponible.");
+        assert(typeof window.nombreFunc == 'function', "window.nombreFunc está disponible.");
+    });
+}
+</script>
+<ul id="results"></ul>
+</body>
+</html>

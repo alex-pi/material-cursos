@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Probando la función fold.</title>
+  <link rel="stylesheet" href="../utils/test.css" />
+  <script src="../utils/test.js"></script>
+  <script src="../utils/log.js"></script>
+  <script src="../ejemplos/fold.js"></script>
+</head>
+<body>
+<script type="text/javascript">    
+window.onload = function(){
+    test("Testing basics: ", function() {
+        var arr = [1,2,3,4];
+        
+        log(arr);
+        
+        var client = {
+            name: "La chayo",
+            age: 30
+        };
+        
+        client.prop = "ZAZAZA";
+        
+        assert(arr[0] == 1, "At 0 it is 1.");
+        assert(client.name == "La chayo", "Chayo is Chayo.");
+        
+        arr.propert = 5;
+        arr[5] = 23;
+        assert(arr[5] == 23, "Increasig the array.");
+        assert(arr[4] == undefined, "Not defined.");
+        
+        assert(client['age'] == 30, "Chayo is not too old." );
+        
+        var clientsById = {
+            1: {name: "Redo", age:30},
+            3: client
+        };
+        
+        log(typeof clientsById[1]);
+        assert(typeof clientsById[1] == 'object', "Is an object");
+        
+        var x;
+        assert(x == null, "Is is null");
+        assert(typeof y == 'undefined', "It is undefined");
+        
+        var nameProp = "birth";
+        
+        client[nameProp] = "26 April";
+    });
+}
+</script>
+<ul id="results"></ul>
+</body>
+</html>

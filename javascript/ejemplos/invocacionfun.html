@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Invocación de funciones.</title>
+  <link rel="stylesheet" href="../utils/test.css" />
+  <script src="../utils/test.js"></script>
+  <script src="../utils/log.js"></script>
+</head>
+<body>
+<ul id="results"></ul>
+<script type="text/javascript">
+    function calcularImpuestos(){ return this;}
+    
+    assert(calcularImpuestos() == window, "El contexto de esta invocación es window.");
+    
+    var calculadora1 = {
+        impuestos: calcularImpuestos
+    };
+    
+    assert(calculadora1.impuestos() == calculadora1, "El contexto es el objeto calculadora1");
+
+    var calculadora2 = {
+        impuestos: calcularImpuestos
+    };
+    
+    assert(calculadora2.impuestos() == calculadora2, "El contexto es el objeto calculadora2");
+    
+    ///////////////////////////
+    // ¿Qué tiene que ver el contexto de una función y su alcance (scope)?
+    function externa() {
+        assert(this == window, "El contexto sigue siendo window.");
+        function interna(){
+            assert(this === window, "El mismo cotexto se sigue pasando a las funciones internas.");
+        }
+        interna();
+    }
+    
+    // Aqui this es window
+    assert(this == window, "this es el objeto window a este nivel.");
+    // Por lo tanto la línea de abajo es equivalente a this.externa() o window.externa()
+    // De aquí se deduce que el parámetro implícito this será también window dentro de la función "externa".
+    externa();
+    assert(typeof interna == 'undefined', "La función interna no es visible.");
+    //////////////////////////
+    
+    test("Invocación con new: ", function(){
+        function Calculadora(porcentaje){
+            // en este punto this es un objeto vacío, representa el objeto que se está construyendo.
+            this.porcentaje = porcentaje;
+            this.impuestos = function(){ return this;};
+            
+            // Javascript coloca un return del objeto this al final.
+        }
+        
+        var calc1 = new Calculadora(15);
+        assert(calc1.impuestos() == calc1, "calc1 es el contexto de esta invocación.");
+        assert(calc1.porcentaje == 15, "Para esta instancia se usa el 15%.");
+        
+        var calc2 = new Calculadora(16);
+    });
+    
+window.onload = function(){
+
+}
+</script>
+</body>
+</html>

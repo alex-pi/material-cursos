@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Función incremento.</title>
+  <link rel="stylesheet" href="../utils/test.css" />
+  <script src="../utils/test.js"></script>
+  <script src="../utils/log.js"></script>
+</head>
+<body>
+<script type="text/javascript">    
+window.onload = function(){
+    // Escribe una función que tome n enteros.
+    // La función debe tomar el primer parámetro y sumarlo al resto de los mismos.
+    
+    function incremento(){
+        var incr = arguments[0];
+        var mod = [];
+        for(var i = 1; i < arguments.length; i++) {
+            mod[i-1] = incr + arguments[i];
+        }
+        return mod;
+    }
+    
+    test("Testing incremento: ", function() {
+        // Usando assert, escriba los tests que crea convenientes para verificar la nueva función.        
+        var mod = incremento(3,1,2,3);
+        
+        assert(mod[0] == 4, "1 incrementó a 4.");
+        assert(mod[1] == 5, "2 incrementó a 5.");
+        assert(mod[2] == 6, "3 incrementó a 6.");        
+    });
+}
+</script>
+<ul id="results"></ul>
+</body>
+</html>

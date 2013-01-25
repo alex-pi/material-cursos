@@ -1,0 +1,334 @@
+  992  git gui
+  993  git log
+  994  git push origin master
+ 1027  git pull origin master
+ 1028  git checkout -b EjemploFormulario
+ 1030  git push origin EjemploFormulario:
+ 1031  git push origin EjemploFormulario:EjemploFormulario
+ 1032  git status
+ 1033  git gui
+ 1034  git push --dry-run origin EjemploFormulario 
+ 1035  git push  origin EjemploFormulario 
+ 1039  git pull desarrollo develop
+ 1040  git status
+ 1041  git checkout -- ERPBaseWeb/profiles.xml
+ 1042  git pull desarrollo develop
+ 1047  git status
+ 1048  git gui
+ 1049  git log
+ 1050  git push origin master
+ 1074  git status
+ 1076  git log
+ 1079  git status
+ 1080  git gui
+ 1102  git status
+ 1103  git branch
+ 1104  git log
+ 1106  git pull origin master
+ 1108  git status
+ 1109  git gui
+ 1110  git log
+ 1111  git push origin master 
+ 1143  git status
+ 1144  git pull desarrollo develop
+ 1145  git checkout master 
+ 1146  git pull desarrollo master
+ 1149  git checkout -b HotfixImpuestoAlmacenaje
+ 1150  git status
+ 1151  git stash save "HotfixImpuestoAlmacenaje"
+ 1152  git checkout master 
+ 1153  git pull desarrollo master
+ 1154  git log
+ 1155  git checkout HotfixImpuestoAlmacenaje 
+ 1163  git status
+ 1164  git gui
+ 1165  git checkout -- bump_version.sh
+ 1166  git log
+ 1167  git status
+ 1168  git stash apply stash@{0} 
+ 1169  git gui
+ 1170  git log
+ 1171  git checkout master 
+ 1172  git merge --no-ff --no-commit HotfixImpuestoAlmacenaje 
+ 1173  git gui
+ 1174  git log
+ 1175  git status
+ 1176  git log
+ 1177  git push desarrollo master
+ 1178  git checkout develop 
+ 1179  git pull desarrollo develop 
+ 1180  git log
+ 1181  git merge --no-ff --no-commit HotfixImpuestoAlmacenaje 
+ 1182  git gui
+ 1183  git log
+ 1186  git log
+ 1187  git push --dry-run desarrollo develop
+ 1188  git push desarrollo develop
+ 1193  git status
+ 1194  git log
+ 1195  git gui
+ 1197  vim .gitignore 
+ 1198  git 
+ 1199  vim .gitignore 
+ 1200  git gui
+ 1202  vim .gitignore 
+ 1203  git gui
+ 1204  vim .gitignore 
+ 1205  git gui
+ 1206  git log
+ 1207  git push origin master
+ 1214  git checkout master
+ 1215  git pull desarrollo master
+ 1230  git pull desarrollo master
+ 1231  git log
+ 1236  git checkout -b HotfixQuitarRegla3a1Reycosa
+ 1237  git log
+ 1242  git status
+ 1243  git gui
+ 1244  git log
+ 1245  git status
+ 1246  git checkout -- bump_version.sh
+ 1247  git gui
+ 1248  git log
+ 1249  git checkout master
+ 1250  git merge --no-ff --no-commit HotfixQuitarRegla3a1Reycosa 
+ 1251  git gui
+ 1252  git log
+ 1253  git push desarrollo master
+ 1254  git checkout develop
+ 1255  git pull desarrollo develop
+ 1256  git log
+ 1257  git merge --no-ff --no-commit HotfixQuitarRegla3a1Reycosa 
+ 1258  git mergetool
+ 1260  git gui
+ 1261  git log
+ 1262  git push desarrollo develop
+ 1264  git checkout master
+ 1265  git status
+ 1266  git checkout -b HotfixImpresionConstancia
+ 1267  git stash save "HotfixImpresionConstancia"
+ 1268  git checkout master
+ 1269  git pull desarrollo master
+ 1270  git checkout HotfixImpresionConstancia 
+ 1273  git log
+ 1275  git status
+ 1276  git checkout -- bump_version.sh
+ 1277  git gui
+ 1278  git stash apply stash@{0} 
+ 1279  git gui
+ 1280  git log
+ 1281  git checkout master
+ 1282  git merge --no-ff --no-commit HotfixImpresionConstancia 
+ 1283  git gui
+ 1284  git log
+ 1285  git push desarrollo master
+ 1286  git checkout develop 
+ 1287  git log
+ 1288  git pull desarrollo develop
+ 1289  git merge --no-ff --no-commit HotfixImpresionConstancia 
+ 1290  git gui
+ 1291  git status
+ 1292  git log
+ 1293  git push desarrollo develop
+ 1298  git status
+ 1299  git gui
+ 1300  git push origin master
+ 1304  git checkout master
+ 1305  git status
+ 1306  git pull desarrollo master
+ 1307  git checkout -b PruebaErrorMaven
+ 1308  git log
+ 1309  git reset --hard HEAD~2
+ 1310  git log
+ 1311  git checkout master 
+ 1312  git branch -D PruebaErrorMaven 
+ 1313  git checkout -b PruebaErrorMaven
+ 1314  git reset --hard HEAD~1
+ 1315  git log
+ 1316  git checkout master
+ 1317  git checkout -- ERPBaseWeb/pom.xml
+ 1320  git stash save "Cambios POM"
+ 1321  git stash apply stash@{0} 
+ 1322  git diff ERPBaseWeb/nb-configuration.xml
+ 1323  git diff ERPBaseWeb/pom.xml
+ 1324  git status
+ 1325  git checkout -- ERPBaseWeb/nb-configuration.xml ERPBaseWeb/pom.xml
+ 1349  git pull desarrollo master
+ 1350  git merge --abort
+ 1351  git log
+ 1352  git merge --help
+ 1353  git merge --abort
+ 1354  git status
+ 1355  git reset --hard HEAD~1
+ 1356  git status
+ 1357  git pull desarrollo master
+ 1358  git log
+ 1364  git status
+ 1367  git status
+ 1368  git checkout master
+ 1369  git stash save "WebService"
+ 1370  git status
+ 1371  git pull origin master
+ 1374  git stash apply stash@{0} 
+ 1376  git log
+ 1377  git pull desarrollo master
+ 1378  git log
+ 1379  git checkout develop
+ 1380  git pull desarrollo develop
+ 1381  git log
+ 1389  git checkout master
+ 1390  git checkout -- ERPBaseWeb/src/main/webapp/resources/js/almacenaje/recepcionMerc.js
+ 1391  git checkout -- ERPBaseWeb/src/main/java/mx/gm3s/util/spring/Sincronizacióni18n.java
+ 1392  git pull desarrollo master
+ 1400  git status
+ 1401  git checkout -b AlmFixFechaBaseCalculo
+ 1402  git gui
+ 1403  git push --dry-run origin AlmFixFechaBaseCalculo:AlmFixFechaBaseCalculo
+ 1404  git push origin AlmFixFechaBaseCalculo:AlmFixFechaBaseCalculo
+ 1424  git pull desarrollo master
+ 1464  git status
+ 1465  git gui
+ 1466  git checkout -b PrimerWsdl
+ 1467  git gui
+ 1468  git stash save "PrimerWsdl"
+ 1469  git stash apply stash@{0} 
+ 1470  git gui
+ 1471  git log
+ 1472  git stash apply stash@{0} 
+ 1501  git status
+ 1502  git checkout -- ERPBaseWeb/src/main/java/mx/gm3s/util/spring/Sincronizacióni18n.java ERPBaseWeb/src/main/webapp/WEB-INF/spring-config/spring-quartz-config.xml ERPBaseWeb/src/main/webapp/resources/js/almacenaje/pagoDeCargos.js
+ 1503  git status
+ 1504  git pull desarrollo master
+ 1505  git log
+ 1514  git log
+ 1517  git pull desarrollo master
+ 1518  git log
+ 1521  git log
+ 1530  git log
+ 1531  git status
+ 1532  git diff sep-seguridad/src/main/resources/mx/sep/seguridad/seguridad-config.xml
+ 1533  git diff sep-sajja-datos/src/main/resources/mx/sep/sajja/datos/datos-mybatis-config.xml
+ 1540  git stash save "Puerto 5433"
+ 1541  git status
+ 1542  git pull origin master
+ 1543  git stash list
+ 1544  git status
+ 1548  git gui
+ 1549  git status
+ 1550  git log
+ 1551  git status
+ 1552  git checkout -b ProblemaTabs
+ 1553  git gui
+ 1554  git status
+ 1557  git gui
+ 1558  git log
+ 1559  git push origin ProblemaTabs:ProblemaTabs
+ 1560  git checkout master 
+ 1564  git gui
+ 1565  git log
+ 1566  git push origin master
+ 1577  git status
+ 1578  git branch -r
+ 1579  git log
+ 1580  git checkout ProblemaTabs 
+ 1581  git log
+ 1582  git reset --soft HEAD^
+ 1583  git status
+ 1584  git stash save "ProblemaTabs"
+ 1585  git merge master
+ 1586  git stash apply stash@{0} 
+ 1587  git log
+ 1588  git status
+ 1589  git gui
+ 1590  git log
+ 1591  git push origin ProblemaTabs
+ 1592  git push --force origin ProblemaTabs
+ 1593  git status
+ 1599  git pull desarrollo master
+ 1602  git status
+ 1603  git log
+ 1604  git checkout master
+ 1605  git log
+ 1618  git checkout ProblemaTabs 
+ 1619  git checkout master
+ 1620  git status
+ 1621  git gui
+ 1622  git log
+ 1623  git checkout ProblemaTabs 
+ 1624  git merge master
+ 1625  git log
+ 1629  git gui
+ 1630  git log
+ 1631  git checkout master
+ 1632  git merge ProblemaTabs 
+ 1633  git log
+ 1634  git push origin master
+ 1637  git status
+ 1638  git log
+ 1639  git status
+ 1640  git diff mneg-tlp/mneg-tlp-servicios/src/main/resources/com/mx/mneg/tlp/servicios/config/servicios-config.xml
+ 1641  git diff mneg-tlp/mneg-tlp-servicios/src/main/java/com/mx/mneg/tlp/servicios/EjemploServicioImpl.java
+ 1642  git gui
+ 1643  git push origin master
+ 1661  git status
+ 1662  git checkout -- ERPBaseWeb/src/main/java/mx/gm3s/util/spring/Sincronizacióni18n.java
+ 1663  git diff pom.xml
+ 1664  git checkout -- pom.xml
+ 1665  git status
+ 1666  git pull desarrollo master
+ 1673  git status
+ 1674  git checkout -- ERPBaseWeb/nb-configuration.xml
+ 1680  git status
+ 1683  git status
+ 1687  git checkout -b AlmCambioCMAguacate
+ 1688  git status
+ 1689  git stash save "AlmCambioCMAguacate"
+ 1696  git log
+ 1698  git gui
+ 1699  git checkout -- bump_version.sh
+ 1700  git log
+ 1701  git stash apply stash@{0} 
+ 1702  git gui
+ 1703  git log
+ 1704  git checkout master 
+ 1705  git pull desarrollo master
+ 1706  git merge --no-ff --no-commit AlmCambioCMAguacate 
+ 1707  git gui
+ 1708  git log
+ 1709  git push desarrollo master
+ 1710  git checkout develop 
+ 1711  git checkout -- ERPBaseWeb/src/main/webapp/WEB-INF/spring-config/spring-quartz-config.xml
+ 1712  git checkout develop 
+ 1713  git pull desarrollo develop
+ 1714  git merge --no-ff --no-commit AlmCambioCMAguacate 
+ 1715  git gui
+ 1716  git log
+ 1717  git push desarrollo develop
+ 1721  git checkout master
+ 1722  git pull desarrollo master
+ 1729  git status
+ 1737  git clone https://github.com/alex-pi/plataforma-spring.git sep-sajja
+ 1738  git clone git@github.com:alex-pi/plataforma-spring.git sep-sajja
+ 1739  git status
+ 1741  git status
+ 1742  vim .gitignore 
+ 1743  git status
+ 1744  vim .gitignore 
+ 1745  git status
+ 1746  vim .gitignore 
+ 1747  git status
+ 1751  git status
+ 1780  git status
+ 1835  git status
+ 1836  git add *.*
+ 1837  git status
+ 1838  git add */**
+ 1839  git status
+ 1840  git gui
+ 1841  vim .gitignore 
+ 1842  git gui
+ 1843  git push origin master
+ 1902  git status
+ 1963  git status
+ 1981  history | grep git
+ 1982  history | grep git > git_history.txt

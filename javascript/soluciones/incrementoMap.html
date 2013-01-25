@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Declaracion de funciones</title>
+  <link rel="stylesheet" href="../utils/test.css" />
+  <script src="../utils/test.js"></script>
+  <script src="../utils/log.js"></script>
+  <script src="map.js"></script>
+</head>
+<body>
+<script type="text/javascript">    
+window.onload = function(){
+    
+    test("Testing incremento: ", function() {
+        
+        var incr = 3;
+        var mod = map([1,2,3], function(){
+            return this + incr;
+        }); 
+        
+        assert(mod[0] == 4, "1 incrementó a 4.");
+        assert(mod[1] == 5, "2 incrementó a 5.");
+        assert(mod[2] == 6, "3 incrementó a 6.");        
+    });
+}
+</script>
+<ul id="results"></ul>
+</body>
+</html>

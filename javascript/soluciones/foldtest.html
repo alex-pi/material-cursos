@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Probando la función fold.</title>
+  <link rel="stylesheet" href="../utils/test.css" />
+  <script src="../utils/test.js"></script>
+  <script src="../utils/log.js"></script>
+  <script src="../ejemplos/fold.js"></script>
+</head>
+<body>
+<script type="text/javascript">    
+window.onload = function(){
+    test("Testing fold: ", function() {
+        // Reescriba las funciones del ejemplo callyapply.html usando la operación fold.
+        
+        var sumatoria = fold([1,2,3,4,5], 0, function(accu) {
+            return accu + this;
+        });
+        assert(sumatoria = 15, "1+...+5 = 15")
+        
+        var prod = fold([2,3,5], 1, function(accu) {
+            return accu * this;
+        });
+        assert(prod = 30, "2 * 3 * 5 = 30");
+        
+        // ¿Está lista la función fold lista para producción?
+        // Agrega tests aqui para escenarios que creas conveniente considerar.
+    });
+}
+</script>
+<ul id="results"></ul>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Immediate functions para crear closures.</title>
+  <link rel="stylesheet" href="test.css" />
+  <script src="test.js"></script>
+  <script src="log.js"></script>
+</head>
+<body>
+    <ul id="results"></ul>
+    <div>Primer div</div>
+    <div>Segundo div</div>
+    <div>Tercer div</div>
+<script type="text/javascript">
+window.onload = function(){
+    
+    var divs =  document.getElementsByTagName("div");
+    // Cada funcion anonima para el evento (handler) comparte el mismo closure
+    // asi que siempre veran el ultimo valor de la variable i.
+    /*
+    for(var i = 1; i <= divs.length; i++) {
+        divs[i-1].addEventListener("click", function(){
+            log("Click sobre div: " + i);
+        }, false);
+    }
+    */
+    
+    // Escriba una versión del código anterior para corregir el problema.
+    
+}
+</script>
+</body>
+</html>

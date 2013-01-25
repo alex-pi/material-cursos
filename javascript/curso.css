@@ -1,0 +1,42 @@
+body {
+	background-color: #eee
+}
+.bad {
+	color: red;
+}
+
+.good {
+	color: green;
+}
+
+/* sin usar */
+div.code {
+	font-size: 0.9em;
+	font-family: Lucida Console, monospace, sans-serif;
+}
+
+.box-shadow {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.slides {
+    font-size: 18px;
+    margin: 50px auto 20px;
+    max-width: 990px;
+    min-height: 650px;
+    width: auto;
+}
+
+div.floater {
+		float:left;
+		min-height:50%;
+		border:3px solid blue;
+}
+
+/*
+.deck-slide-scaler {
+		min-height: 100%;
+		position: absolute;
+		padding: 0 48px 0 0 !important;
+}
+*/
