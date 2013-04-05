@@ -23,10 +23,19 @@
     <link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDefault.css"/>
 
     <script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script>
-    <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.js"></script>    
+    <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <script src="deckjs/jquery-1.7.2.min.js"></script>
     <script src="deckjs/modernizr.custom.js"></script>
 </head>
 <body>
+    <div id="info-bar" class="info-bar-effect">
+        <div style="">
+            <pre>Hola
+            adios
+            lol</pre>
+        </div>
+        <div id="info-bar-btn"></div>
+    </div>
     <article class="deck-container slides box-shadow">
         <section class="slide" id="title-slide">
             <h1>JavaScript</h1>
@@ -411,10 +420,6 @@
         <a href="." title="Permalink to this slide" class="deck-permalink">#</a>
     </article>
 
-    <!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="deckjs/jquery-1.7.2.min.js"><\/script>')</script>
-
     <!-- Deck Core and extensions -->
     <script src="deckjs/core/deck.core.js"></script>
     <script src="deckjs/extensions/hash/deck.hash.js"></script>
@@ -426,12 +431,30 @@
 
     <!-- Initialize the deck -->
     <script>
-    $(function() {
-        $.deck('.slide');
-        $.deck('enableScale');
-    });
+        $(document).ready(function(){
+            $(function() {
+                $.deck('.slide');
+                $.deck('enableScale');
+            });
+            
+            var $contentBar = $('#info-bar div:first-child');
+            $contentBar.toggleBar = function(){
+                if(!this.hidden) {
+                    this.slideUp('slow', function(){
+                        $contentBar.hidden = true;
+                    });
+                } else {
+                    this.slideDown('slow', function(){
+                        $contentBar.hidden = false;
+                    });
+                }     
+            };
+            $('#info-bar-btn').click(function(){
+                $contentBar.toggleBar();
+            });
+            SyntaxHighlighter.all();
+        });
     </script>
-    <script type="text/javascript">SyntaxHighlighter.all();</script>
 
 </body>
 </html>

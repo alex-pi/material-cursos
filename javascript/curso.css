@@ -28,9 +28,43 @@ div.code {
 }
 
 div.floater {
-		float:left;
-		min-height:50%;
-		border:3px solid blue;
+	float:left;
+	min-height:50%;
+	border:3px solid blue;
+}
+
+#info-bar {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 416px;
+  height: auto;
+  background: #B3B3B3;
+  color: #414141;
+  z-index: 999;
+  display: inline-block;
+  border-bottom-right-radius: 1.3em;
+  border-bottom-left-radius: 1.3em;   
+}
+
+.info-bar-effect {
+    border-color: #D6D6D6;
+    border-right: 4px solid #D6D6D6 !important;
+    border-style: none solid solid !important;
+    border-width: 0 4px 4px !important;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.4);
+    overflow: hidden !important;
+    filter: alpha(opacity=70);
+    opacity: 0.7;    
+}
+
+#info-bar > :nth-child(1) {
+	padding: 3px;
+}
+
+#info-bar-btn {
+	border-top: 2px solid #D6D6D6 ;
+	height: 15px;
 }
 
 /*
